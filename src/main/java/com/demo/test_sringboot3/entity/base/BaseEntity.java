@@ -1,15 +1,16 @@
-package com.demo.test_sringboot3.entity;
+package com.demo.test_sringboot3.entity.base;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class BaseEntity {
+@MappedSuperclass
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
+public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //ID自增
     private Long id;
