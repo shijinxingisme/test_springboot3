@@ -6,5 +6,7 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class R_User extends User {
+public class S_User extends User {
+
+
 }
